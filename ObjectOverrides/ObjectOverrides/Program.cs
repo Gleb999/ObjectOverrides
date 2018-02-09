@@ -58,7 +58,12 @@ namespace ObjectOverrides
                 Console.WriteLine("Same Instance!");
 
             }
-            Console.ReadLine();
+
+                Person p3 = new Person("Sally", "Jones", 4);
+                Person p4 = new Person("Sally", "Jones", 4);
+                Console.WriteLine("P3 and P4 have same state: {0}", object.Equals(p3, p4));
+                Console.WriteLine("P3 and P4 are pointing to same object: {0}", object.ReferenceEquals(p3, p4));
+                Console.ReadLine();
 
         }
     }
