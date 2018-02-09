@@ -28,25 +28,17 @@ namespace ObjectOverrides
                 return myState;
             }
 
+            public String SSN { get; set; }
+            public override int GetHashCode()
+            {
+                return this.ToString().GetHashCode();
+            }
+
             public override bool Equals(object obj)
             {
                 if (obj is Person && obj != null)
                 {
-                    temp = (Person)obj;
-                    if(temp.FirstName == this.FirstName 
-                       && temp.LastName == this.LastName
-                       && temp.Age == this.Age)
-                    {
-                        return true;
-                    }
-
-                    else
-                    {
-                        return false;
-                    }
-
-                }
-                return false;
+                    return obj.ToString() == this.ToString();
             }
         }
         static void Main(string[] args)
